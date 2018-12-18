@@ -11,14 +11,14 @@ const posts = require('./server/routes/api/posts');
 
 app.use('/api/posts', posts);
 
-//handle production
-if (process.env.NODE_ENV === 'production'){
-  //static folder
-  app.use(express.static(__dirname+'/public'));
+// //handle production
+// if (process.env.NODE_ENV === 'production'){
+//   //static folder
+//   app.use(express.static(__dirname+'/dist'));
 
-  //handle single page app
-  app.get(/.*/, (req, res)=>res.sendFile(__dirname+'/public/index.html'));
-}
+//   //handle single page app
+//   app.get(/.*/, (req, res)=>res.sendFile(__dirname+'/dist/index.html'));
+// }
 
 
 const port = process.env.PORT || 3000;
